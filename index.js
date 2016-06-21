@@ -78,7 +78,7 @@ function getDefaultConfig(mainTemplate, templatesPath) {
       };
 
       // Add extra function for finding a security scheme name
-      ramlObj.securitySchemeName = function (name) {
+      ramlObj.getSecuritySchemeName = function (name) {
         for (var index = 0; index < ramlObj.securitySchemes.length; ++index) {
           if (ramlObj.securitySchemes[index][name] !== null) {
             var keys = Object.keys(ramlObj.securitySchemes[index]);
