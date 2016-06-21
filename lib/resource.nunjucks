@@ -64,8 +64,10 @@
                   <div class="alert alert-warning">
                     {% set securedByScopes = renderSecuredBy(securedBy) %}
                     <span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by {{ securedByScopes }}
-                    {% set securityScheme = securitySchemeWithName(securedBy) %}
+                    {% set securitySchemeName = getSecuritySchemeName(securedBy) %}
+                    {% set securityScheme = securitySchemeWithName(securitySchemeName) %}
                     {% if securityScheme.description %}
+                      <br>
                       {% markdown %}{{ securityScheme.description }}{% endmarkdown %}
                     {% endif %}
                   </div>
@@ -199,12 +201,12 @@
                 {% if method.securedBy.length %}
                   {% for securedBy in method.securedBy %}
                     <div class="tab-pane" id="{{ resource.uniqueId }}_{{ method.method }}_securedby">
-                      {% set securitySchemeName = securitySchemeName(securedBy) %}
+                      {% set securitySchemeName = getSecuritySchemeName(securedBy) %}
                       {% set securedByScopes = renderSecuredBy(securedBy) %}
                       {% set securityScheme = securitySchemeWithName(securitySchemeName) %}
 
-                      Secured by {{ securedByScopes }}
-                      
+                      Secured by <b>{{ securitySchemeName }}</b>
+
                       {% if securityScheme.description %}
                         <h3>Description</h3>
                         {% markdown %}{{ securityScheme.description }}{% endmarkdown %}
