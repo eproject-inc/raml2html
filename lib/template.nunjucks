@@ -173,7 +173,7 @@
         <div class="col-md-9" role="main">
           <div class="page-header">
             <h1>{{ title }} API documentation{% if version %} <small>version {{ version }}</small>{% endif %}</h1>
-            <p>{{ baseUri }}</p>
+            <p>Base URI: {{ baseUri }}</p>
 
             {% for chapter in documentation %}
               <h3 id="{{ chapter.uniqueId }}"><a href="#{{ chapter.uniqueId }}">{{ chapter.title }}</a></h3>
