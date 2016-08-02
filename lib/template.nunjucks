@@ -164,6 +164,12 @@
         word-wrap: normal;
         white-space: pre;
       }
+
+      footer {
+         left:50%;
+         position:center;
+         text-align: center;
+      }
     </style>
   </head>
 
@@ -213,5 +219,8 @@
         </div>
       </div>
     </div>
+    <footer>
+      <p><small>© 2016 Kanjoya, Inc. All rights reserved. Kanjoya Confidential Information.</small></p>
+    </footer>
   </body>
 </html>
